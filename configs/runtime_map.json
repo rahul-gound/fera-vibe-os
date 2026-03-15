@@ -1,0 +1,47 @@
+{
+  ".exe": {
+    "runtime": "wine",
+    "type": "container",
+    "description": "Windows application via Wine"
+  },
+  ".apk": {
+    "runtime": "android-runtime",
+    "type": "container",
+    "description": "Android application via Android container"
+  },
+  ".deb": {
+    "runtime": "linux-native",
+    "type": "native",
+    "description": "Debian package via native runtime"
+  },
+  ".rpm": {
+    "runtime": "linux-native",
+    "type": "native",
+    "description": "RPM package via native runtime"
+  },
+  ".AppImage": {
+    "runtime": "linux-native",
+    "type": "native",
+    "description": "AppImage via native runtime"
+  },
+  ".py": {
+    "runtime": "python",
+    "type": "native",
+    "description": "Python script via Python interpreter"
+  },
+  ".js": {
+    "runtime": "node",
+    "type": "native",
+    "description": "NodeJS script via Node runtime"
+  },
+  ".fbsd": {
+    "runtime": "freebsd-container",
+    "type": "container",
+    "description": "FreeBSD binary via FreeBSD container"
+  },
+  ".obsd": {
+    "runtime": "openbsd-vm",
+    "type": "vm",
+    "description": "OpenBSD binary via lightweight QEMU VM"
+  }
+}
