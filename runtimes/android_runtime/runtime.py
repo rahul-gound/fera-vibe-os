@@ -16,6 +16,8 @@ class AndroidRuntime:
         """Install and run an APK using a local Android emulator / Anbox."""
         log.info("Installing APK %s via adb", filepath)
         subprocess.run(["adb", "install", filepath], check=True)
+        # Best-effort: derive package name from filename.  For production
+        # use, parse `aapt dump badging <apk>` to get the real package id.
         package = os.path.splitext(os.path.basename(filepath))[0]
         return subprocess.run(
             ["adb", "shell", "monkey", "-p", package, "1"],

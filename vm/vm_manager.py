@@ -5,6 +5,7 @@ run natively or inside a Linux container (e.g. OpenBSD binaries).
 """
 
 import logging
+import os
 import shutil
 import subprocess
 
@@ -52,7 +53,7 @@ class VMManager:
             "-smp", str(self._cpus),
             "-drive", f"file={image},format=qcow2",
             "-virtfs",
-            f"local,path={filepath},mount_tag=hostshare,security_model=mapped-xattr",
+            f"local,path={os.path.dirname(filepath)},mount_tag=hostshare,security_model=mapped-xattr",
             "-nographic",
         ]
         log.info("Starting VM: %s", " ".join(cmd))
